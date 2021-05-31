@@ -1,0 +1,12 @@
+[ver:1,total:8100,branch:exampleProjectArtjom]
+.gtm/Spring Boot-> ProjectSApplication.app:2866,1622448000:717,1622462400:748,1622466000:180,1622476800:726,1622487600:495,r
+src/main/java/com/example/project_s/EmployeeResource.java:1241,1622462400:960,1622473200:30,1622487600:251,m
+src/main/java/com/example/project_s/ProjectSApplication.java:1101,1622444400:360,1622448000:9,1622462400:120,1622476800:612,m
+src/main/java/com/example/project_s/service/EmployeeService.java:837,1622462400:480,1622473200:150,1622484000:180,1622487600:27,m
+src/main/java/com/example/project_s/model/Employee.java:647,1622444400:480,1622448000:120,1622487600:47,m
+src/main/resources/application.properties:495,1622448000:277,1622462400:180,1622487600:38,m
+src/main/java/com/example/project_s/repo/EmployeeRepo.java:450,1622462400:330,1622487600:120,m
+.gtm/Gradle-> Build project_s.app:233,1622448000:117,1622462400:32,1622476800:42,1622487600:42,r
+build.gradle:200,1622448000:200,m
+src/main/java/com/example/project_s/exception/UserNotFoundException.java:25,1622462400:25,m
+src/main/java/com/example/project_s/service/UserNotFoundException.java:5,1622462400:5,d
