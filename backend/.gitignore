@@ -1,7 +1,6 @@
 HELP.md
-../.gradle
+.gradle
 build/
-.gradle/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
@@ -36,9 +35,3 @@ out/
 
 ### VS Code ###
 .vscode/
-
-# Ignore Gradle project-specific cache directory
-.gradle
-
-# Ignore Gradle build output directory
-build

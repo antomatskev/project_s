@@ -1,10 +1,10 @@
-package com.example.project_s;
+package eu.mentreon.backend;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProjectSApplicationTests {
+class BackendApplicationTests {
 
     @Test
     void contextLoads() {
