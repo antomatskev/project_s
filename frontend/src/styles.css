@@ -141,16 +141,10 @@ form.searchBox::after {
   padding: 50px;
 }
 
-.mentorPosts .btn btn-primary{
-  background-color: #555;
-  color: white;
-}
-
 .howItWorks {
   background-color: dimgray;
   padding: 20px 10px;
   height: 200px;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
