@@ -6,6 +6,7 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+
 ### STS ###
 .apt_generated
 .classpath
@@ -42,3 +43,5 @@ out/
 
 # Ignore Gradle build output directory
 build
+
+node_modules/
