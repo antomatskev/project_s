@@ -51,7 +51,7 @@
         Make a post
       </button>
 
-      <div *ngFor="let BlogPost of blogPosts">
+      <div *ngFor="let BlogPost of blogPosts.reverse()">
         <div class="post">
           <h1 class="postHeadline">{{BlogPost.postTitle}}</h1>
           <p class="postText">

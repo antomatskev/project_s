@@ -36,9 +36,11 @@ export class MentorComponent implements OnInit{
       (response: BlogPost) => {
         console.log(response);
         this.getBlogPosts();
+        addForm.reset();
       },
       (error: HttpErrorResponse) => {
         alert(error.message);
+        addForm.reset();
       }
     );
   }
