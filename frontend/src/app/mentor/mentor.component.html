@@ -15,7 +15,7 @@
   </div>
 
   <!--  Middle section -->
-  <div class="middleSection">
+  <div class="middleSection" id="main-container">
 
     <!--    Mentor info section-->
     <div class="mentorInfoSection">
@@ -47,19 +47,25 @@
     <!--    Mentor posts-->
     <div class="mentorPosts" id="posts-container">
       <h1 style="text-align:center">Posts</h1>
-      <button class="btn btn-outline-dark" type="submit" data-toggle="modal" data-target="#exampleModal">
+      <button (click)="onOpenModal(null, 'add')" class="btn btn-outline-dark" type="submit">
         Make a post
       </button>
 
-      <div *ngFor="let BlogPost of blogPosts.reverse()">
+      <div *ngFor="let blogPost of blogPosts.reverse()">
         <div class="post">
-          <h1 class="postHeadline">{{BlogPost.postTitle}}</h1>
+          <h1 class="postHeadline">{{blogPost.postTitle}}</h1>
           <p class="postText">
-            {{BlogPost.postText}}
+            {{blogPost.postText}}
           </p>
           <p class="postDate">
             <b>... days ago</b>
           </p>
+          <button (click)="onOpenModal(blogPost, 'delete')" class="btn btn-outline-dark" type="submit">
+            Delete the post
+          </button>
+          <button (click)="onOpenModal(blogPost, 'edit')" class="btn btn-outline-dark" type="submit">
+            Edit the post
+          </button>
         </div>
       </div>
 
@@ -90,7 +96,7 @@
 </div>
 
 <!-- Modal Post Creation  -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -118,4 +124,63 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Post Edit  -->
+<div class="modal fade" id="updatePostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Post Edit</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #editForm='ngForm'>
+          <input type="hidden" ngModel="{{editBlogPost?.id}}" name="id" class="form-control" id="id">
+          <input type="hidden" ngModel="{{editBlogPost?.postCode}}" name="userCode" class="form-control" id="userCode" >
+          <div class="form-group">
+            <label for="postTitle">Post Title</label>
+            <input type="text" ngModel="{{editBlogPost?.postTitle}}" ngModel name="postTitle" class="form-control" id="name" placeholder="Title" required>
+          </div>
+          <div class="form-group">
+            <label for="postText">Post Text</label>
+            <textarea type="text" ngModel="{{editBlogPost?.postTitle}}" ngModel name="postText" class="form-control" id="email" placeholder="Text" rows="3" required></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="edit-post-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="editForm.invalid" (click)="onUpdatePost(editForm.value)" type="submit" class="btn btn-primary" >EDIT</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Post Delete -->
+<div class="modal fade" id="deletePostModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Post delete</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure want to delete post with Title: {{deleteBlogPost?.postTitle}}?
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="delete-post-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button (click)="onDeletePost(deleteBlogPost?.id)" type="button" class="btn btn-primary">Delete the post</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
 

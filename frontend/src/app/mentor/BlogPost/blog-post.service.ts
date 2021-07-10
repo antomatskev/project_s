@@ -20,6 +20,10 @@ export class BlogPostService {
     return this.http.post<BlogPost>(`${this.apiServerUrl}/mentor/addPost`, blogPost)
   }
 
+  public updateBlogPost(blogPost: BlogPost): Observable<BlogPost> {
+    return this.http.put<BlogPost>(`${this.apiServerUrl}/mentor/updatePost`, blogPost);
+  }
+
   public deleteBlogPost(postId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/mentor/deletePost/${postId}`)
   }

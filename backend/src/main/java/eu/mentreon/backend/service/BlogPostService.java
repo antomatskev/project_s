@@ -5,11 +5,13 @@ import eu.mentreon.backend.model.BlogPost;
 import eu.mentreon.backend.repo.BlogPostRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class BlogPostService {
 
     private final BlogPostRepo blogPostRepo;
@@ -26,6 +28,10 @@ public class BlogPostService {
 
     public List<BlogPost> findAllBlogPosts() {
         return blogPostRepo.findAll();
+    }
+
+    public BlogPost updateBlogPost(BlogPost blogPost) {
+        return blogPostRepo.save(blogPost);
     }
 
     public BlogPost findBlogPostById(Long id) {

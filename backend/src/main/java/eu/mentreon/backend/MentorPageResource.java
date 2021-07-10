@@ -35,6 +35,12 @@ public class MentorPageResource {
         return new ResponseEntity<>(newBlogPost, HttpStatus.CREATED);
     }
 
+    @PutMapping("/updatePost")
+    public ResponseEntity<BlogPost> updateBlogPost (@RequestBody BlogPost blogPost) {
+        BlogPost updateBlogPost = blogPostService.updateBlogPost(blogPost);
+        return new ResponseEntity<>(updateBlogPost, HttpStatus.OK);
+    }
+
     @DeleteMapping("/deletePost/{id}")
     public ResponseEntity<?> deleteBlogPost (@PathVariable("id") Long id) {
         blogPostService.deleteBlogPost(id);
