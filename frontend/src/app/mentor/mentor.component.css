@@ -140,6 +140,11 @@ form.searchBox::after {
   padding: 50px;
 }
 
+.mentorPosts .btn-outline-dark {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
 .howItWorks {
   background-color: dimgray;
   padding: 20px 10px;
