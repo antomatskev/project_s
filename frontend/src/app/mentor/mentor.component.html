@@ -105,11 +105,11 @@
       <div class="modal-body">
         <form #addForm="ngForm" (ngSubmit)="onAddPost(addForm)">
           <div class="form-group">
-            <label for="postTitle">Post Title</label>
+            <label>Post Title</label>
             <input type="text" ngModel name="postTitle" class="form-control" id="name" placeholder="Title" required>
           </div>
           <div class="form-group">
-            <label for="postText">Post Text</label>
+            <label>Post Text</label>
             <textarea type="text" ngModel name="postText" class="form-control" id="email" placeholder="Text" rows="3" required></textarea>
           </div>
           <div class="modal-footer">
@@ -134,11 +134,11 @@
           <input type="hidden" ngModel="{{editBlogPost?.id}}" name="id" class="form-control" id="id">
           <input type="hidden" ngModel="{{editBlogPost?.postCode}}" name="userCode" class="form-control" id="userCode" >
           <div class="form-group">
-            <label for="postTitle">Post Title</label>
+            <label>Post Title</label>
             <input type="text" ngModel="{{editBlogPost?.postTitle}}" ngModel name="postTitle" class="form-control" id="name" placeholder="Title" required>
           </div>
           <div class="form-group">
-            <label for="postText">Post Text</label>
+            <label>Post Text</label>
             <textarea type="text" ngModel="{{editBlogPost?.postText}}" ngModel name="postText" class="form-control" id="email" placeholder="Text" rows="3" required></textarea>
           </div>
           <div class="modal-footer">
