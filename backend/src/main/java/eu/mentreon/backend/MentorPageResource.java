@@ -18,31 +18,31 @@ public class MentorPageResource {
     }
 
     @GetMapping("/findPost/all")
-    public ResponseEntity<List<BlogPost>> getAllBlogPosts () {
+    public ResponseEntity<List<BlogPost>> getAllBlogPosts() {
         List<BlogPost> blogPosts = blogPostService.findAllBlogPosts();
-    return new ResponseEntity<>(blogPosts, HttpStatus.OK);
+        return new ResponseEntity<>(blogPosts, HttpStatus.OK);
     }
 
     @GetMapping("/findPost/{id}")
-    public ResponseEntity<BlogPost> getBlogPostById (@PathVariable("id") Long id) {
+    public ResponseEntity<BlogPost> getBlogPostById(@PathVariable("id") Long id) {
         BlogPost blogPost = blogPostService.findBlogPostById(id);
         return new ResponseEntity<>(blogPost, HttpStatus.OK);
     }
 
     @PostMapping("/addPost")
-    public ResponseEntity<BlogPost> addBlogPost (@RequestBody BlogPost blogPost) {
+    public ResponseEntity<BlogPost> addBlogPost(@RequestBody BlogPost blogPost) {
         BlogPost newBlogPost = blogPostService.addBlogPost(blogPost);
         return new ResponseEntity<>(newBlogPost, HttpStatus.CREATED);
     }
 
     @PutMapping("/updatePost")
-    public ResponseEntity<BlogPost> updateBlogPost (@RequestBody BlogPost blogPost) {
+    public ResponseEntity<BlogPost> updateBlogPost(@RequestBody BlogPost blogPost) {
         BlogPost updateBlogPost = blogPostService.updateBlogPost(blogPost);
         return new ResponseEntity<>(updateBlogPost, HttpStatus.OK);
     }
 
     @DeleteMapping("/deletePost/{id}")
-    public ResponseEntity<?> deleteBlogPost (@PathVariable("id") Long id) {
+    public ResponseEntity<?> deleteBlogPost(@PathVariable("id") Long id) {
         blogPostService.deleteBlogPost(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }

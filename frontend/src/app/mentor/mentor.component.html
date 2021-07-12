@@ -20,7 +20,7 @@
     <!--    Mentor info section-->
     <div class="mentorInfoSection">
 
-      <img id="avatarImage"  src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="mentorAvatar">
+      <img id="avatarImage" src="https://www.w3schools.com/howto/img_avatar.png" alt="Avatar" class="mentorAvatar">
 
       <!--      Mentors info-->
       <div class="mentorInfo">
@@ -85,7 +85,7 @@
   <!--    How it works-->
   <div class="howItWorks">
     <h1 class="howItWorksHeadLine">How it works??</h1>
-    <h3 class="howItWorksText">1) CHOOSE A MEMBERSHIP  2) SIGN UP 3) ADD A PAYMENT METHOD 4) GET BENEFITS</h3>
+    <h3 class="howItWorksText">1) CHOOSE A MEMBERSHIP 2) SIGN UP 3) ADD A PAYMENT METHOD 4) GET BENEFITS</h3>
   </div>
 
   <!--  Mentor page footer-->
@@ -96,7 +96,8 @@
 </div>
 
 <!-- Modal Post Creation  -->
-<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="addPostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -110,11 +111,12 @@
           </div>
           <div class="form-group">
             <label>Post Text</label>
-            <textarea type="text" ngModel name="postText" class="form-control" id="email" placeholder="Text" rows="3" required></textarea>
+            <textarea type="text" ngModel name="postText" class="form-control" id="email" placeholder="Text" rows="3"
+                      required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" id="add-post-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary" >POST</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">POST</button>
           </div>
         </form>
       </div>
@@ -123,7 +125,8 @@
 </div>
 
 <!-- Modal Post Edit  -->
-<div class="modal fade" id="updatePostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="updatePostModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -132,18 +135,22 @@
       <div class="modal-body">
         <form #editForm='ngForm'>
           <input type="hidden" ngModel="{{editBlogPost?.id}}" name="id" class="form-control" id="id">
-          <input type="hidden" ngModel="{{editBlogPost?.postCode}}" name="userCode" class="form-control" id="userCode" >
+          <input type="hidden" ngModel="{{editBlogPost?.postCode}}" name="userCode" class="form-control" id="userCode">
           <div class="form-group">
             <label>Post Title</label>
-            <input type="text" ngModel="{{editBlogPost?.postTitle}}" ngModel name="postTitle" class="form-control" id="name" placeholder="Title" required>
+            <input type="text" ngModel="{{editBlogPost?.postTitle}}" ngModel name="postTitle" class="form-control"
+                   id="name" placeholder="Title" required>
           </div>
           <div class="form-group">
             <label>Post Text</label>
-            <textarea type="text" ngModel="{{editBlogPost?.postText}}" ngModel name="postText" class="form-control" id="email" placeholder="Text" rows="3" required></textarea>
+            <textarea type="text" ngModel="{{editBlogPost?.postText}}" ngModel name="postText" class="form-control"
+                      id="email" placeholder="Text" rows="3" required></textarea>
           </div>
           <div class="modal-footer">
             <button type="button" id="edit-post-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button [disabled]="editForm.invalid" (click)="onUpdatePost(editForm.value)" type="submit" class="btn btn-primary" >EDIT</button>
+            <button [disabled]="editForm.invalid" (click)="onUpdatePost(editForm.value)" type="submit"
+                    class="btn btn-primary">EDIT
+            </button>
           </div>
         </form>
       </div>
@@ -163,7 +170,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" id="delete-post-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button (click)="onDeletePost(deleteBlogPost?.id)" type="button" class="btn btn-primary">Delete the post</button>
+        <button (click)="onDeletePost(deleteBlogPost?.id)" type="button" class="btn btn-primary">Delete the post
+        </button>
       </div>
     </div>
   </div>

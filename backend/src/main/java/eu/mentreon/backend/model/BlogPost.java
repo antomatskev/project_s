@@ -13,7 +13,8 @@ public class BlogPost implements Serializable {
     private String postText;
     private String postCode;
 
-    public BlogPost() {}
+    public BlogPost() {
+    }
 
     public BlogPost(String postTitle, String postText, String postCode) {
         this.postTitle = postTitle;

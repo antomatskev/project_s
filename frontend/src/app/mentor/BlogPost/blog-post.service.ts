@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {BlogPost} from "./blogPost";
@@ -10,7 +10,8 @@ import {environment} from "../../../environments/environment";
 export class BlogPostService {
   private apiServerUrl = environment.apiBaseUrl;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   public getBlogPosts(): Observable<BlogPost[]> {
     return this.http.get<BlogPost[]>(`${this.apiServerUrl}/mentor/findPost/all`)

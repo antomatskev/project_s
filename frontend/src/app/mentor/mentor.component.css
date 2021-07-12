@@ -54,6 +54,7 @@ body {
     display: block;
     text-align: left;
   }
+
   .header-right {
     float: none;
   }
@@ -121,7 +122,7 @@ form.searchBox::after {
 }
 
 .notbold {
-  font-weight:normal
+  font-weight: normal
 }
 
 .mentorInfoSection {
@@ -157,10 +158,11 @@ form.searchBox::after {
 }
 
 .howItWorks .howItWorksHeadLine {
-  text-align:center;
+  text-align: center;
 }
+
 .howItWorks .howItWorksText {
-  text-align:center;
+  text-align: center;
 }
 
 .footer {

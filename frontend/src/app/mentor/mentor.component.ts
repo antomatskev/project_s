@@ -10,12 +10,13 @@ import {NgForm} from "@angular/forms";
   styleUrls: ['mentor.component.css']
 })
 
-export class MentorComponent implements OnInit{
+export class MentorComponent implements OnInit {
   public blogPosts: BlogPost[];
   public editBlogPost: BlogPost;
   public deleteBlogPost: BlogPost;
 
-  constructor(private blogPostService: BlogPostService) {}
+  constructor(private blogPostService: BlogPostService) {
+  }
 
   ngOnInit() {
     this.getBlogPosts();
