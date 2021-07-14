@@ -6,12 +6,14 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {MentorComponent} from "./mentor/mentor.component";
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MentorComponent,
+    HomeComponent,
 
   ],
   imports: [
