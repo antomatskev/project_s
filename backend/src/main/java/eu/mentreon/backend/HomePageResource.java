@@ -1,2 +1,9 @@
-package eu.mentreon.backend;public class HomePageResource {
+package eu.mentreon.backend;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/home")
+public class HomePageResource {
 }
