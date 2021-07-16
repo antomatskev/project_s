@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MentorComponent} from "./mentor/mentor.component";
+import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
   {
     path: 'mentor', component: MentorComponent
+  },
+  {
+    path: 'home', component: HomeComponent
   }
 ];
 
