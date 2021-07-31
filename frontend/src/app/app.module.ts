@@ -6,13 +6,13 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import {MentorComponent} from "./mentor/mentor.component";
+import {AppUserService} from "./AppUser/app-user.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MentorComponent,
-
+    MentorComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +20,7 @@ import {MentorComponent} from "./mentor/mentor.component";
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AppUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

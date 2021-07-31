@@ -1,4 +1,4 @@
-package eu.mentreon.backend;
+package eu.mentreon.backend.resource;
 
 import eu.mentreon.backend.model.BlogPost;
 import eu.mentreon.backend.service.BlogPostService;

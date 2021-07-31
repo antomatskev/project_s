@@ -1,1 +1,96 @@
-<router-outlet></router-outlet>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--Header -->
+<router-outlet>
+  <div id="main-container">
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand">Mentreon</a>
+        <form class="d-flex">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+      <div [hidden]="false" class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <button (click)="onOpenModal(null, 'add')" type="submit" class="btn btn-outline-dark">
+          Sing up
+        </button>
+        <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#logInModal">
+          Log in
+        </button>
+      </div>
+      <div [hidden]="true">
+        <button type="button" class="btn btn-outline-dark" data-toggle="modal">
+          Log out
+        </button>
+      </div>
+    </nav>
+  </div>
+</router-outlet>
+
+<!--Modals-->
+<div class="modal fade" id="logInModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Please sign in</h5>
+      </div>
+      <div class="modal-body">
+        <form >
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="text" ngModel name="postTitle" class="form-control" id="name" placeholder="Email address" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" ngModel name="postTitle" class="form-control" id="name" placeholder="Password" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="log-in-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button  type="submit" class="btn btn-primary">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Sign Up</h5>
+      </div>
+      <div class="modal-body">
+        <form #addForm="ngForm" (ngSubmit)="onSignUpModal(addForm)">
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" ngModel name="firstName" class="form-control" id="name" placeholder="First name" required>
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" ngModel name="lastName" class="form-control" id="name" placeholder="Last name" required>
+          </div>
+          <div class="form-group">
+            <label>Email address</label>
+            <input type="text" ngModel name="email" class="form-control" id="name" placeholder="Email address" required>
+          </div>
+<!--          <div class="form-group">-->
+<!--            <label>Image URL</label>-->
+<!--            <input type="text" ngModel name="imageUrl" class="form-control" id="name" placeholder="Image URL" required>-->
+<!--          </div>-->
+          <div class="form-group">
+            <label>Password</label>
+            <input type="text" ngModel name="password" class="form-control" id="name" placeholder="Password" required>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="sign-up-form" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
